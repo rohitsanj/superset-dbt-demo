@@ -36,7 +36,7 @@ We'll be following the steps from [Running Superset on Kubernetes](https://super
 1. Run `poetry install` in the root directory.
 1. Use `poetry shell` to spawn a shell within the virtual environment.
 1. Run `dbt --version` to ensure the version is `1.5.x`.
-1. Run `dbt deps` to install some dbt dependencies needed.
+1. Run `dbt deps` to install some dbt dependencies needed (as declared in `dbt_jaffle_shop/packages.yml`).
     ```
     $ cd dbt_jaffle_shop
     $ dbt deps
@@ -47,8 +47,8 @@ We'll be following the steps from [Running Superset on Kubernetes](https://super
 1. Create a BigQuery service account (with BigQuery admin access) and generate a JSON credentials key for it. Replace `PATH_TO_KEYFILE` in `dbt_jaffle_shop/profiles.yml` with the downloaded JSON file path.
 > [!NOTE]
 > We'll be using the same credentials file for `dbt` (to run materialization jobs) and for `Superset` (to run queries against BQ tables). In the real world, these will likely exist as separate credentials and scoped down to the specific permissions required.
-1. Create a BigQuery dataset with the default options (or use an existing one). Replace `BIGQUERY_DATASET` with the name.
-1. Replace `GCP_PROJECT` with the name of your GCP project.
+2. Create a BigQuery dataset with the default options (or use an existing one). Replace `BIGQUERY_DATASET` with the name.
+3. Replace `GCP_PROJECT` with the name of your GCP project.
 
 
 ## Running the demo
@@ -109,12 +109,12 @@ We'll be following the steps from [Running Superset on Kubernetes](https://super
 
     </details>
 
-1. Verify that the tables/views have been populated in your BQ dataset. It should look like the screenshot below:
+2. Verify that the tables/views have been populated in your BQ dataset. It should look like the screenshot below:
 <p align="center">
     <img src="./etc/bq-tables.png" width="70%" />
 </p>
 
-1. Browse generated dbt docs
+3. Browse generated dbt docs
 
     ```
     $ dbt docs generate
