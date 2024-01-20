@@ -45,8 +45,8 @@ We'll be following the steps from [Running Superset on Kubernetes](https://super
 #### BigQuery setup (Configuring `profiles.yml`)
 
 1. Create a BigQuery service account (with BigQuery admin access) and generate a JSON credentials key for it. Replace `PATH_TO_KEYFILE` in `dbt_jaffle_shop/profiles.yml` with the downloaded JSON file path.
-    > [!NOTE]
-    > We'll be using the same credentials file for `dbt` (to run materialization jobs) and for `Superset` (to run queries against BQ tables). In the real world, these will likely exist as separate credentials and scoped down to the specific permissions required.
+> [!NOTE]
+> We'll be using the same credentials file for `dbt` (to run materialization jobs) and for `Superset` (to run queries against BQ tables). In the real world, these will likely exist as separate credentials and scoped down to the specific permissions required.
 1. Create a BigQuery dataset with the default options (or use an existing one). Replace `BIGQUERY_DATASET` with the name.
 1. Replace `GCP_PROJECT` with the name of your GCP project.
 
