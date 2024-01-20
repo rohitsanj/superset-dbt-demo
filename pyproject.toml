@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "superset-dbt-demo"
+version = "0.1.0"
+description = "Sample project demonstrating integration between Superset and dbt"
+authors = ["Rohit Sanjay <sanjay.rohit2@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dbt-core = "~1.5.0"
+dbt-bigquery = "~1.5.0"
+dbt-superset-lineage = "~0.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

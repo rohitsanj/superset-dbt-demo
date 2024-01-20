@@ -1,0 +1,20 @@
+# Override defaults from https://github.com/apache/superset/blob/master/helm/superset/values.yaml
+
+configOverrides:
+  secret: |
+    SECRET_KEY = '7xitgSP/1hOu8ogQObqefs/7oV+u9I8ClimOA9aXc7LvL35jHMlAuGGX'
+  # Needed by dbt-superset-lineage to sync
+  # dbt model/column descriptions into Superset via PUT requests.
+  disable_csrf: |
+    WTF_CSRF_ENABLED = False
+
+# Makes Superset accessible from localhost
+service:
+  type: LoadBalancer
+  nodePort:
+    http: 30001
+
+bootstrapScript: |
+  #!/bin/bash
+  pip3 install sqlalchemy-bigquery==1.9.0
+  if [ ! -f ~/bootstrap ]; then echo "Running Superset with uid {{ .Values.runAsUser }}" > ~/bootstrap; fi
