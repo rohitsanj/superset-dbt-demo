@@ -173,6 +173,13 @@ We'll be limiting the scope of this demo to the latter feature.
 > [!TIP]
 > Read [this blogpost](https://engineering.hometogo.com/how-hometogo-connected-dbt-and-superset-to-make-metadata-more-accessible-and-reduce-analytical-2223af539cc6) from the authors of `dbt-superset-lineage` for more on the motivation behind creating a dbt <-> Superset connector.
 
+### Create some charts/dashboards!
+
+Here's a simple dashboard created from the various metric tables. Makes you go _WoW_, yeah?
+
+<p align="center">
+<img src="./etc/sample_dashboard.png" width="70%">
+</p>
 ---
 
 ## Summary
