@@ -2,7 +2,7 @@
 
 configOverrides:
   secret: |
-    SECRET_KEY = '7xitgSP/1hOu8ogQObqefs/7oV+u9I8ClimOA9aXc7LvL35jHMlAuGGX'
+    SECRET_KEY = '<your super secret key>'
   # Needed by dbt-superset-lineage to sync
   # dbt model/column descriptions into Superset via PUT requests.
   disable_csrf: |
