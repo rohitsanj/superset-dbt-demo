@@ -111,7 +111,7 @@ We'll be following the steps from [Running Superset on Kubernetes](https://super
 
 1. Verify that the tables/views have been populated in your BQ dataset. It should look like the screenshot below:
 <p align="center">
-    <img src="./etc/bq-tables.png" width="200" />
+    <img src="./etc/bq-tables.png" width="70%" />
 </p>
 
 1. Browse generated dbt docs
@@ -158,8 +158,8 @@ $ python3 dbt_jaffle_shop/push_descriptions.py
 If the script ran successfully, you should be able to see the `orders` model description in Superset by hovering over the now-present information tooltip. Click on the dataset, and hover over any of the column names to see their descriptions as well.
 
 <p align="center">
-    <img src="./etc/orders_model_desc.png" width="200">
-    <img src="./etc/orders_column_desc.png" width="200" style="">
+    <img src="./etc/orders_model_desc.png" width="70%">
+    <img src="./etc/orders_column_desc.png" width="70%" style="">
 </p>
 
 
