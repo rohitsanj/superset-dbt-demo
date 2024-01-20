@@ -180,7 +180,7 @@ Here's a simple dashboard created from the various metric tables. Makes you go _
 <p align="center">
 <img src="./etc/sample_dashboard.png" width="70%">
 </p>
----
+
 
 ## Summary
 
