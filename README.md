@@ -56,16 +56,13 @@ We'll be following the steps from [Running Superset on Kubernetes](https://super
 ### Materialize assets into BQ and view dbt docs site
 
 1. Materialize assets described in the `dbt_jaffle_shop/models/` directory
-
     ```bash
     $ cd dbt_jaffle_shop
     $ dbt run
     ```
-
     <details>
     <summary>Example logs from `dbt run`</summary>
 
-        ```bash
         $ dbt run
         23:47:38  Running with dbt=1.5.9
         23:47:38  Registered adapter: bigquery=1.5.7
@@ -109,13 +106,13 @@ We'll be following the steps from [Running Superset on Kubernetes](https://super
         23:48:37  Completed successfully
         23:48:37
         23:48:37  Done. PASS=12 WARN=0 ERROR=0 SKIP=0 TOTAL=12
-        ```
 
     </details>
-<br>
 
 1. Verify that the tables/views have been populated in your BQ dataset. It should look like the screenshot below:
-![BQ Tables](./etc/bq-tables.png)
+<p align="center">
+    <img src="./etc/bq-tables.png" width="200" />
+</p>
 
 1. Browse generated dbt docs
 
@@ -160,8 +157,10 @@ $ python3 dbt_jaffle_shop/push_descriptions.py
 
 If the script ran successfully, you should be able to see the `orders` model description in Superset by hovering over the now-present information tooltip. Click on the dataset, and hover over any of the column names to see their descriptions as well.
 
-![orders model desc](./etc/orders_model_desc.png)
-![orders column desc](./etc/orders_column_desc.png)
+<p align="center">
+    <img src="./etc/orders_model_desc.png" width="200">
+    <img src="./etc/orders_column_desc.png" width="200" style="">
+</p>
 
 
 From their documentation,
