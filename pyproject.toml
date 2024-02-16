@@ -4,13 +4,17 @@ version = "0.1.0"
 description = "Sample project demonstrating integration between Superset and dbt"
 authors = ["Rohit Sanjay <sanjay.rohit2@gmail.com>"]
 license = "MIT License"
+packages = [
+    {include = "dbt_jaffle_shop"}
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
 dbt-core = "~1.5.0"
 dbt-bigquery = "~1.5.0"
-dbt-superset-lineage = "~0.3.3"
+dbt-superset-lineage = {git = "https://github.com/rohitsanj/dbt-superset-lineage.git", branch = "create-dataset-if-not-present"}
+pydantic = "^1.7"
 
 
 [build-system]

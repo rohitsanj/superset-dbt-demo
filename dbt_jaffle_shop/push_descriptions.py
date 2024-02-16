@@ -8,6 +8,9 @@ from dbt_superset_lineage import push_descriptions_main
 
 
 if __name__ == "__main__":
+    superset_db_id = 1
+    create_dataset_if_not_exists = True
+
     protocol = "http"
     superset_host = "localhost"
     superset_port = 8088
@@ -28,9 +31,10 @@ if __name__ == "__main__":
         dbt_project_dir=".",
         dbt_db_name=None,
         superset_url=superset_url,
-        superset_db_id=None,
+        superset_db_id=superset_db_id,
         superset_refresh_columns=True,
         superset_pause_after_update=None,
         superset_access_token=access_token,
-        superset_refresh_token=refresh_token
+        superset_refresh_token=refresh_token,
+        create_dataset_if_not_exists=create_dataset_if_not_exists,
     )
