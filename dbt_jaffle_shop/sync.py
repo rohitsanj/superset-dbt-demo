@@ -4,10 +4,14 @@ and push descriptions from dbt models into Superset
 using dbt-superset-lineage (https://github.com/slidoapp/dbt-superset-lineage)
 """
 import requests
-from dbt_superset_lineage import push_descriptions_main
+import os
+from dbt_superset_lineage import push_descriptions_main, pull_dashboards_main
 
 
 if __name__ == "__main__":
+    # Assuming script is at same level as the root of dbt project
+    cwd = os.getcwd()
+ 
     superset_db_id = 1
     create_dataset_if_not_exists = True
 
@@ -27,8 +31,9 @@ if __name__ == "__main__":
     access_token = js["access_token"]
     refresh_token = js["refresh_token"]
 
+    print("Creating datasets and pushing descriptions...")
     push_descriptions_main(
-        dbt_project_dir=".",
+        dbt_project_dir=cwd,
         dbt_db_name=None,
         superset_url=superset_url,
         superset_db_id=superset_db_id,
@@ -38,3 +43,8 @@ if __name__ == "__main__":
         superset_refresh_token=refresh_token,
         create_dataset_if_not_exists=create_dataset_if_not_exists,
     )
+
+    print("Pulling published dashboards as exposures...")
+    pull_dashboards_main(dbt_project_dir=cwd, exposures_path=f"/models/exposures.yml", dbt_db_name=None,
+                         superset_url=superset_url, superset_db_id=superset_db_id, sql_dialect="bigquery",
+                         superset_access_token=access_token, superset_refresh_token=refresh_token)
