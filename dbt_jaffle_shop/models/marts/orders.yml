@@ -2,8 +2,10 @@ version: 2
 
 models:
   - name: orders
-    description: This table has basic information about orders, as well as some derived facts based on payments
+    description: |
+      This table has basic information about orders, as well as some derived facts based on payments
 
+      [Explore this table!](http://localhost:8088/explore/?datasource_type=table&datasource_id=97)
     columns:
       - name: order_id
         tests:
